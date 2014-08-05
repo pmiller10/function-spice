@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+    <script src="static/js/Chart.js/Chart.js"></script>
+    <body>
+        <h1> Function Game </h1>
+        <div>
+            Data: {{data}}
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <form>
+            Answer: <input type="text" id="answer">
+            <button type="button" onclick="submit_answer({{game_id}});">Submit</button>
+        </form>
+    </body>
+    <script src="static/js/site.js"></script>
+    <script>
+        var data = JSON.parse("{{data}}");
+        var empty = new Array();
+        new_chart(data, empty);
+    </script>
+{% endblock %}
