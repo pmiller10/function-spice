@@ -120,9 +120,6 @@ Chart.defaults.global = {
 }
 
 function new_chart(data1, data2) {
-    alert('data1 is length ' + data1.length);
-    alert('data1 is ' + data1);
-    alert('about to create chart with data1 and data2' + data1 + data2);
 	var ctx = document.getElementById("myChart").getContext("2d");
 	
 	var x_values = new Array();
@@ -146,7 +143,6 @@ function new_chart(data1, data2) {
         ]
     };
     if (data2.length == data1.length) {
-        alert('using data2');
         data.datasets.push({
 	        label: "Your Guess",
 	        fillColor: "rgba(151,187,205,0.2)",
@@ -157,9 +153,6 @@ function new_chart(data1, data2) {
 	        pointHighlightStroke: "rgba(151,187,205,1)",
 	        data: data2
 	    });
-    }
-    else {
-        alert('not using data2. ' + data1.length + '\n ' + data1 + '\n' + data2.length + '\n' + data2);
     }
 	var myLineChart = new Chart(ctx).Line(data);
 }
